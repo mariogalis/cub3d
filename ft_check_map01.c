@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:46:23 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 15:49:31 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:28:51 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,32 +20,13 @@ int	*ft_transform_rgb(char *ret)
 	int		j;
 
 	i = -1;
+	j = i;
 	matrix = ft_split(ret, ',');
 	free(ret);
 	if (!matrix)
 		return (NULL);
-	while (matrix[++i])
-	{
-		j = -1;
-		if (ft_strlen(matrix[i]) > 3)
-		{
-			ft_free_matrix(matrix);
-			return (NULL);
-		}
-		while (matrix[i][++j])
-		{
-			if (ft_isdigit(matrix[i][j]) == 0)
-			{
-				ft_free_matrix(matrix);
-				return (NULL);
-			}
-		}
-	}
-	if (i != 3)
-	{
-		ft_free_matrix(matrix);
+	if (aux(matrix, i, j) == 0)
 		return (NULL);
-	}
 	rgb = malloc(sizeof(int) * 3);
 	rgb[0] = ft_atoi(matrix[0]);
 	rgb[1] = ft_atoi(matrix[1]);

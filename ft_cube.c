@@ -6,11 +6,19 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:01:42 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 17:30:56 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:35:26 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+void	auxcub(t_ray *ray)
+{
+	if (ray->side == EAST || ray->side == WEST)
+		ray->distperpwall = ray->sidedist_x - ray->delta_x;
+	else
+		ray->distperpwall = ray->sidedist_y - ray->delta_y;
+}
 
 t_ray	ft_rayhit(t_ray ray, char **map)
 {
@@ -37,10 +45,7 @@ t_ray	ft_rayhit(t_ray ray, char **map)
 		if (map[ray.map_y][ray.map_x] == '1')
 			ray.hit = 1;
 	}
-	if (ray.side == EAST || ray.side == WEST)
-		ray.distperpwall = ray.sidedist_x - ray.delta_x;
-	else
-		ray.distperpwall = ray.sidedist_y - ray.delta_y;
+	auxcub(&ray);
 	return (ray);
 }
 

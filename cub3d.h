@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:03:23 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 18:04:20 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/22 19:43:15 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,4 +150,8 @@ int		ft_key_push(int key_code, t_ray *ray);
 int		ft_key_release(int key_code, t_ray *ray);
 void	ft_rotate(double *x, double *y, double angle);
 void	ft_move(t_ray *ray);
+int		aux(char	**matrix, int i, int j);
+t_ray	cube2aux(t_ray ray, t_wall	*wall, int x);
+int		startplayeraux(t_ray *ray, int i, int j);
+void	rayaux(t_ray *ray);
 #endif

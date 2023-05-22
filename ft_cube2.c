@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:27:12 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 17:31:54 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/22 19:41:47 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,7 @@ t_ray	ft_print_wall(t_ray ray, int x)
 	wall.stepy = (double)ray.tex.height / (double)wall.wallheight;
 	aux = (wall.startdraw - ray.height / 2 + wall.wallheight / 2);
 	wall.exacthit = aux * wall.stepy;
-	while (wall.y < ray.height)
-	{
-		if (wall.y < wall.startdraw)
-			ft_pixel_put(&ray.img, x, wall.y, ft_trgb(0, ray.mapest->c_color[0],
-					ray.mapest->c_color[1], ray.mapest->c_color[2]));
-		else if (wall.y >= wall.startdraw && wall.y <= wall.enddraw)
-		{
-			wall.ywall = (int)wall.exacthit & (ray.tex.height - 1);
-			wall.exacthit += wall.stepy;
-			choose_tex(ray, wall, x);
-		}
-		else
-			ft_pixel_put(&ray.img, x, wall.y, ft_trgb(0, ray.mapest->f_color[0],
-					ray.mapest->f_color[1], ray.mapest->f_color[2]));
-		wall.y++;
-	}
-	return (ray);
+	return (cube2aux(ray, &wall, x));
 }
 
 t_ray	ft_ray(t_ray ray, char **map, int xsweep)
@@ -73,26 +57,7 @@ t_ray	ft_ray(t_ray ray, char **map, int xsweep)
 		ray.delta_y = 1e30;
 	else
 		ray.delta_y = fabs(1 / ray.ray_y);
-	if (ray.ray_x < 0)
-	{
-		ray.step_x = -1;
-		ray.sidedist_x = (ray.player_x - ray.map_x) * ray.delta_x;
-	}
-	else
-	{
-		ray.step_x = 1;
-		ray.sidedist_x = (ray.map_x + 1.0 - ray.player_x) * ray.delta_x;
-	}
-	if (ray.ray_y < 0)
-	{
-		ray.step_y = -1;
-		ray.sidedist_y = (ray.player_y - ray.map_y) * ray.delta_y;
-	}
-	else
-	{
-		ray.step_y = 1;
-		ray.sidedist_y = (ray.map_y + 1.0 - ray.player_y) * ray.delta_y;
-	}
+	rayaux(&ray);
 	ray = ft_rayhit(ray, map);
 	return (ray);
 }
@@ -108,32 +73,8 @@ t_ray	*ft_start_player(t_ray *ray)
 		j = 0;
 		while (ray->mapest->map[i][j])
 		{
-			if (ft_strchr(PLAYER, ray->mapest->map[i][j]))
-			{
-				ray->player_x = j;
-				ray->player_y = i;
-				if (ray->mapest->map[i][j] == 'N')
-				{
-					ray->dir_x = 0;
-					ray->dir_y = -1;
-				}
-				if (ray->mapest->map[i][j] == 'S')
-				{
-					ray->dir_x = 0;
-					ray->dir_y = 1;
-				}
-				if (ray->mapest->map[i][j] == 'E')
-				{
-					ray->dir_x = 1;
-					ray->dir_y = 0;
-				}
-				if (ray->mapest->map[i][j] == 'W')
-				{
-					ray->dir_x = -1;
-					ray->dir_y = 0;
-				}
+			if (startplayeraux(ray, i, j) == 0)
 				return (ray);
-			}
 			j++;
 		}
 		i++;

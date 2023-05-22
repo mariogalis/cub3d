@@ -6,11 +6,38 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:50:02 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 15:51:05 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:28:06 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+int	aux(char	**matrix, int i, int j)
+{
+	while (matrix[++i])
+	{
+		j = -1;
+		if (ft_strlen(matrix[i]) > 3)
+		{
+			ft_free_matrix(matrix);
+			return (0);
+		}
+		while (matrix[i][++j])
+		{
+			if (ft_isdigit(matrix[i][j]) == 0)
+			{
+				ft_free_matrix(matrix);
+				return (0);
+			}
+		}
+	}
+	if (i != 3)
+	{
+		ft_free_matrix(matrix);
+		return (0);
+	}
+	return (1);
+}
 
 int	ft_check_end_color(char **map, char *str)
 {
