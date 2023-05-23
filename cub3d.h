@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:03:23 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 19:43:15 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:34:46 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # define PLAYER "NSEW"
 # define COLLISION "1"
 # define BUFFER_SIZE 3
+# define ON_DESTROY 17
 
 typedef struct s_map {
 	char	*no_tex_path;
@@ -119,6 +120,8 @@ enum {
 	ON_KEYDOWN = 2,
 	ON_KEYUP = 3,
 };
+
+int		endwindow(t_ray	*ray);
 size_t	ft_linelen(const char *line);
 t_all	*ft_parse_map(char **argv);
 char	*get_next_line(int fd);

@@ -6,14 +6,22 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:34:10 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 17:34:13 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:30:34 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+int	endwindow(t_ray	*ray)
+{
+	(void )ray;
+	exit(0);
+}
+
 int	ft_key_push(int key_code, t_ray *ray)
 {
+	if (key_code == 53)
+		endwindow(ray);
 	if (key_code == 0)
 		ray->spinspeed = -0.2;
 	if (key_code == 2)

@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:52:15 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 15:52:51 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:35:35 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,8 @@ char	**ft_clean_map(char **read)
 
 	i = 0;
 	inic = ft_check_line_init(read);
-	printf("inic = %i\n", inic);
 	if (!inic)
 		ft_error("bad arguments");
-	printf("inic = %i\n", inic);
 	while (read[i])
 		i++;
 	ret = (char **)malloc(sizeof(char *) * (i - inic));

@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:01:42 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 18:35:26 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:34:31 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void	ft_cube(t_all *all)
 
 	ray = ft_init_ray(all);
 	ray = ft_load_tex(ray);
+	mlx_hook(ray->mlx_win, ON_DESTROY, 0L, endwindow, &ray);
 	mlx_hook(ray->mlx_win, ON_KEYDOWN, 1L << 0, ft_key_push, ray);
 	mlx_hook(ray->mlx_win, ON_KEYUP, 1L << 1, ft_key_release, ray);
 	mlx_loop_hook(ray->mlx, ft_raycasting, ray);

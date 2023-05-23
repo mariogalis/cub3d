@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:35:07 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 18:05:56 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:35:29 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,5 @@ t_all	*ft_parse_map(char **argv)
 	all->mapest->map = ft_clean_map(read);
 	ft_free_matrix(read);
 	ft_check_map02(*all);
-	ft_print_matrix(all->mapest->map);
 	return (all);
 }

@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:46:23 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 18:28:51 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:35:21 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,13 +105,9 @@ t_all	*ft_check_map01(char **read)
 	all = ft_calloc(sizeof(t_all), 1);
 	all->mapest = ft_calloc(sizeof(t_map), 1);
 	all->mapest->no_tex_path = ft_check_tex(read, "NO ");
-	printf("no = %s\n", all->mapest->no_tex_path);
 	all->mapest->so_tex_path = ft_check_tex(read, "SO ");
-	printf("so = %s\n", all->mapest->so_tex_path);
 	all->mapest->we_tex_path = ft_check_tex(read, "WE ");
-	printf("we = %s\n", all->mapest->we_tex_path);
 	all->mapest->ea_tex_path = ft_check_tex(read, "EA ");
-	printf("ea = %s\n", all->mapest->ea_tex_path);
 	all->mapest->f_color = ft_get_color(read, "F");
 	all->mapest->c_color = ft_get_color(read, "C");
 	if (all->mapest->f_color == NULL || !(all->mapest->f_color)
