@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map01.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:46:23 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/23 15:35:21 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:40:01 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,9 +114,9 @@ t_all	*ft_check_map01(char **read)
 		|| all->mapest->c_color == NULL || !(all->mapest->c_color))
 		ft_error("Error: Bad colors");
 	if (all->mapest->no_tex_path == NULL || !(*all->mapest->no_tex_path)
-		|| all->mapest->no_tex_path == NULL || !(*all->mapest->no_tex_path)
-		|| all->mapest->no_tex_path == NULL || !(*all->mapest->no_tex_path)
-		|| all->mapest->no_tex_path == NULL || !(*all->mapest->no_tex_path))
+		|| all->mapest->so_tex_path == NULL || !(*all->mapest->so_tex_path)
+		|| all->mapest->we_tex_path == NULL || !(*all->mapest->we_tex_path)
+		|| all->mapest->ea_tex_path == NULL || !(*all->mapest->ea_tex_path))
 		ft_error("Error: Bad colors");
 	return (all);
 }

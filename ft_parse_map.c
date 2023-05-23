@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:35:07 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/23 15:35:29 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:38:49 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ t_all	*ft_parse_map(char **argv)
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
-		exit(0);
+		exit(1);
 	read = ft_read_map(fd);
 	all = ft_check_map01(read);
 	all->mapest->map = ft_clean_map(read);
