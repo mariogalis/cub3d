@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "__split_buffer": "c",
+        "functional": "c",
+        "iterator": "c",
+        "locale": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "vector": "c"
+    }
+}

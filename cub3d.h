@@ -6,7 +6,7 @@
 /*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:03:23 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/23 17:26:41 by mario            ###   ########.fr       */
+/*   Updated: 2023/05/25 18:40:00 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,13 @@
 # define SYMBOLS " 01NSWE"
 # define FLOOR "0NSWE"
 # define PLAYER "NSEW"
-# define COLLISION "1"
+# define COLLIS "1"
 # define BUFFER_SIZE 3
 # define ON_DESTROY 17
+# define KEYUP 13
+# define KEYDOWN 1
+# define KEYRIGHT 2
+# define KEYLEFT 0
 
 typedef struct s_map {
 	char	*no_tex_path;

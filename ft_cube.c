@@ -6,7 +6,7 @@
 /*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:01:42 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/23 17:41:19 by mario            ###   ########.fr       */
+/*   Updated: 2023/05/25 19:03:59 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,17 @@ t_ray	ft_rayhit(t_ray ray, char **map)
 	return (ray);
 }
 
+void	collisions(t_ray *ray)
+{
+	if(ray->distperpwall <= 0.25)
+		ray->speed = 0;
+}
+
 int	ft_raycasting(t_ray *ray)
 {
 	int	xsweep;
 
+	collisions(ray);
 	ray->plane_x = -ray->dir_y;
 	ray->plane_y = ray->dir_x * 0.66;
 	ft_move(ray);
