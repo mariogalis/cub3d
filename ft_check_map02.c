@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map02.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:50:02 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 18:28:06 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/30 00:10:55 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int	ft_check_end_color(char **map, char *str)
 	while (map[++i])
 	{
 		j = 0;
-		while (map[i][j] && map[i][j] == ' ')
-			i++;
+		// while (map[i][j] && map[i][j] == ' ')
+		// 	i++;
 		if (ft_strncmp(map[i], str, ft_strlen(str)) == 0)
 		{
 			ret = ft_check_good(map[i]);

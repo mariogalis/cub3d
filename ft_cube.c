@@ -6,7 +6,7 @@
 /*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:01:42 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/25 19:03:59 by mario            ###   ########.fr       */
+/*   Updated: 2023/05/29 23:30:35 by mario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_ray	ft_rayhit(t_ray ray, char **map)
 
 void	collisions(t_ray *ray)
 {
-	if(ray->distperpwall <= 0.25)
+	if(ray->distperpwall <= 0.2 || *ray->distance <= 0.2)
 		ray->speed = 0;
 }
 
