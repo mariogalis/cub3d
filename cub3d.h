@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:03:23 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/30 19:23:30 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:12:23 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,4 +163,5 @@ int		startplayeraux(t_ray *ray, int i, int j);
 void	rayaux(t_ray *ray);
 void	print_matrix_p(char **mat);
 int	ft_print_matrix(char **matrix);
+int	mapname2(char *m);
 #endif

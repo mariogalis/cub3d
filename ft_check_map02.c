@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:50:02 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/30 19:52:24 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:07:48 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_check_map02(t_all all)
 	int	player;
 
 	player = 0;
-	i = ft_check_end_color(all.mapest->map, "C");
+	i = ft_check_end_color(all.mapest->map, "C") - 1;
 	while (all.mapest->map[++i])
 	{
 		j = -1;

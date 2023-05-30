@@ -6,11 +6,23 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:35:07 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/30 19:40:40 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:11:15 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
+
+static int	mapname(char *m)
+{
+	int	l;
+	int	p;
+
+	l = ft_strlen(m);
+	p = l - 4;
+	if (m[l - 1] == 'b' && m[l - 2] == 'u' && m[l - 3] == 'c' && m[p] == '.' )
+		return (0);
+	return (1);
+}
 
 int	count_strs(char **arr)
 {
@@ -73,8 +85,8 @@ t_all	*ft_parse_map(char **argv)
 	char	**read;
 
 	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
-		exit(1);
+	if (fd < 0 ||mapname(argv[1]) == 1)
+		ft_error("ERROR BAD .cub FILE");
 	read = ft_read_map(fd);
 	all = ft_check_map01(read);
 	all->mapest->map = ft_clean_map(read);

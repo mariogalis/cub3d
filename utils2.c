@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:33:18 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/22 19:43:55 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:11:59 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,16 @@ void	rayaux(t_ray *ray)
 		ray->step_y = 1;
 		ray->sidedist_y = (ray->map_y + 1.0 - ray->player_y) * ray->delta_y;
 	}
+}
+
+int	mapname2(char *m)
+{
+	int	l;
+	int	p;
+
+	l = ft_strlen(m);
+	p = l - 4;
+	if (m[l - 1] == 'm' && m[l - 2] == 'p' && m[l - 3] == 'x' && m[p] == '.' )
+		return (0);
+	return (1);
 }

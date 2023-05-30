@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
+/*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:33:26 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/23 17:36:15 by mario            ###   ########.fr       */
+/*   Updated: 2023/05/30 20:16:32 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int	startplayeraux(t_ray *ray, int i, int j)
 {
 	if (ft_strchr(PLAYER, ray->mapest->map[i][j]))
 	{
-		ray->player_x = j;
-		ray->player_y = i;
+		ray->player_x = j + 0.5;
+		ray->player_y = i + 0.5;
 		if (ray->mapest->map[i][j] == 'N')
 			inicializeray(ray, 0, -1);
 		else if (ray->mapest->map[i][j] == 'S')
