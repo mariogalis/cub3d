@@ -1,26 +1,6 @@
 ARREGLAR :
 
-Seg Fault cuando en el mapa la ultima fila empieza por un espacio, problema en ft_check_end_color :
-    
-    	// while (map[i][j] && map[i][j] == ' ')
-		// 	i++;
-    
 Mejorar colisiones para poder ir para atras.
+Si "." en texturas segfault y que acaben en .cub
 
-En el mapKO.cub si en la ultima fila no esta un uno haciendo esquina salta como map open.
-
- 11111111111
-1000000000001
-100000S000001     ===> MAP OPEN
-1000000000001
-111111111111 
-
- 11111111111
-1000000000001
-100000S000001     ===> MAP OK
-1000000000001
-1111111111111
-
-Cambiar mensaje error cuando falta textura, da bad colors 
-
-Si no hay letra de spawn se inicia solo pintando cielo y suelo
+Mapa abierto si jugador esta en un muro

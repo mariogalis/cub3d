@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
+/*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:03:23 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/25 18:40:00 by mario            ###   ########.fr       */
+/*   Updated: 2023/05/30 19:23:30 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,4 +161,6 @@ int		aux(char	**matrix, int i, int j);
 t_ray	cube2aux(t_ray ray, t_wall	*wall, int x);
 int		startplayeraux(t_ray *ray, int i, int j);
 void	rayaux(t_ray *ray);
+void	print_matrix_p(char **mat);
+int	ft_print_matrix(char **matrix);
 #endif

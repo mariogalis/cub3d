@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map01.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
+/*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:46:23 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/23 17:40:01 by mario            ###   ########.fr       */
+/*   Updated: 2023/05/30 19:39:48 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,14 @@ char	*ft_check_tex(char **map, char *str)
 	char	*ret;
 
 	i = -1;
+	if (!map)
+		return NULL;
 	while (map[++i])
 	{
 		j = 0;
-		while (map[i][j] && map[i][j] == ' ')
-			i++;
-		if (ft_strncmp(map[i], str, ft_strlen(str)) == 0)
+		while (map[i] && map[i][j] && map[i][j] == ' ')
+			j++;
+		if (ft_strncmp(&map[i][j], str, ft_strlen(str)) == 0)
 		{
 			ret = ft_check_good(map[i]);
 			return (ret);
@@ -117,6 +119,6 @@ t_all	*ft_check_map01(char **read)
 		|| all->mapest->so_tex_path == NULL || !(*all->mapest->so_tex_path)
 		|| all->mapest->we_tex_path == NULL || !(*all->mapest->we_tex_path)
 		|| all->mapest->ea_tex_path == NULL || !(*all->mapest->ea_tex_path))
-		ft_error("Error: Bad colors");
+		ft_error("Error: Bad texture");
 	return (all);
 }

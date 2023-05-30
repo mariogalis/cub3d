@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 17:40:04 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/30 19:41:20 by magonzal         ###   ########.fr       */
+/*   Created: 2023/05/30 19:06:14 by magonzal          #+#    #+#             */
+/*   Updated: 2023/05/30 19:23:23 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cub3d.h>
+#include "cub3d.h"
 
-// void leaks(void)
-// {
-// 	system("leaks cub3D");
-// }
-
-int	main(int argc, char **argv)
+void	print_matrix_p(char **mat)
 {
-	t_all	*all;
+	int i = -1;
+	int j;
 
-	//atexit(leaks);
-	if (argc != 2)
-		return (1);
-	all = ft_parse_map(argv);
-	ft_cube(all);
-	ft_free_struct(all);
+	while (mat[++i])
+	{
+		j = -1;
+		while (mat[i][++j])
+			printf("i: %d, j %d %p  |  ", i, j, &mat[i][j]);
+		printf("\n");
+		fflush(0);
+	}
 }
+
+int	ft_print_matrix(char **matrix)
+{
+	int	i;
+
+	i = 0;
+	if (!matrix)
+	{
+		printf("Null\n");
+		fflush(0);
+		return (1);
+	}
+	while (matrix[i])
+	{
+		ft_putstr_fd(matrix[i++], 1);
+		ft_putchar_fd('\n', 1);
+	}
+	return (0);
+}
+

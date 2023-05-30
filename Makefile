@@ -12,6 +12,7 @@ SRCS	=	main.c \
 			ft_cube.c \
 			ft_load_tex.c \
 			ft_key.c\
+			debug.c \
 
 OBJS	= ${SRCS:.c=.o}
 

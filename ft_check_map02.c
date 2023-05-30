@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map02.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mario <mario@student.42.fr>                +#+  +:+       +#+        */
+/*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:50:02 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/30 00:10:55 by mario            ###   ########.fr       */
+/*   Updated: 2023/05/30 19:52:24 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int	ft_check_end_color(char **map, char *str)
 	while (map[++i])
 	{
 		j = 0;
-		// while (map[i][j] && map[i][j] == ' ')
-		// 	i++;
+		while (*map[i] && *map[i] == ' ')
+			map[i]++;
 		if (ft_strncmp(map[i], str, ft_strlen(str)) == 0)
 		{
 			ret = ft_check_good(map[i]);
@@ -81,17 +81,23 @@ void	ft_check_map02(t_all all)
 {
 	int	i;
 	int	j;
+	int	player;
 
-	i = ft_check_end_color(all.mapest->map, "C") + 1;
+	player = 0;
+	i = ft_check_end_color(all.mapest->map, "C");
 	while (all.mapest->map[++i])
 	{
 		j = -1;
 		while (all.mapest->map[i][++j])
 		{
+			if(ft_strchr(PLAYER, all.mapest->map[i][j]))
+				player++;
 			if (!ft_strchr(SYMBOLS, all.mapest->map[i][j]))
 				ft_error("Error: bad symbols");
 			else if (ft_strchr(FLOOR, all.mapest->map[i][j]))
 				ft_check_map_floor(all, i, j);
 		}
 	}
+	if(player != 1)
+		ft_error("BAD PLAYER");
 }
