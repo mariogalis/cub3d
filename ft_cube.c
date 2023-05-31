@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:01:42 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/30 20:19:06 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:41:12 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,21 @@ t_ray	ft_rayhit(t_ray ray, char **map)
 
 void	collisions(t_ray *ray)
 {
-	if(ray->distperpwall <= 0.2 || *ray->distance <= 0.2)
-		ray->speed = 0;
+	if (ft_strchr("1", ray->mapest->map[(int)ray->player_y]
+		[(int)(ray->player_x + ray->dir_x * ray->speed * 2)]) == NULL)
+		ray->player_x += ray->dir_x * ray->speed;
+	if (ft_strchr("1",ray->mapest->map[(int)(ray->player_y + ray->dir_y * ray->speed * 2)]
+		[(int)ray->player_x]) == NULL)
+			ray->player_y += ray->dir_y * ray->speed;
 }
 
 int	ft_raycasting(t_ray *ray)
 {
 	int	xsweep;
 
-	collisions(ray);
 	ray->plane_x = -ray->dir_y;
 	ray->plane_y = ray->dir_x * 0.66;
-	ft_move(ray);
+	collisions(ray);
 	ft_rotate(&ray->dir_x, &ray->dir_y, ray->spinspeed);
 	mlx_clear_window(ray->mlx, ray->mlx_win);
 	xsweep = 0;
