@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.c                                            :+:      :+:    :+:   */
+/*   ft_print_matrix.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 19:06:14 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/30 19:23:23 by magonzal         ###   ########.fr       */
+/*   Created: 2023/06/01 15:54:43 by magonzal          #+#    #+#             */
+/*   Updated: 2023/06/01 15:54:45 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
-
-void	print_matrix_p(char **mat)
-{
-	int i = -1;
-	int j;
-
-	while (mat[++i])
-	{
-		j = -1;
-		while (mat[i][++j])
-			printf("i: %d, j %d %p  |  ", i, j, &mat[i][j]);
-		printf("\n");
-		fflush(0);
-	}
-}
+#include <cub3d.h>
 
 int	ft_print_matrix(char **matrix)
 {
@@ -45,4 +30,3 @@ int	ft_print_matrix(char **matrix)
 	}
 	return (0);
 }
-

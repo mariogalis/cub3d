@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:35:07 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/30 20:11:15 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/06/01 15:55:58 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,15 @@ t_all	*ft_parse_map(char **argv)
 	t_all	*all;
 	int		fd;
 	char	**read;
+	int		i;
 
 	fd = open(argv[1], O_RDONLY);
-	if (fd < 0 ||mapname(argv[1]) == 1)
-		ft_error("ERROR BAD .cub FILE");
+	if (fd < 0 || mapname(argv[1]) == 1)
+		ft_error("bad .cub file");
 	read = ft_read_map(fd);
 	all = ft_check_map01(read);
-	all->mapest->map = ft_clean_map(read);
+	i = ft_check_map_init(read);
+	all->mapest->map = ft_clean_map(read, i);
 	ft_free_matrix(read);
 	ft_check_map02(*all);
 	return (all);

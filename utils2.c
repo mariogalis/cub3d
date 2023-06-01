@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:33:18 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/30 20:11:59 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/06/01 16:19:02 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 void	ft_error(char *str)
 {
-	printf("%s\n", str);
+	int	i;
+
+	i = ft_strlen(str);
+	write(2, "Error \n", 7);
+	write(2, str, i);
+	write(2, "\n", 1);
 	exit(0);
 }
 

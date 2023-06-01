@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 17:40:04 by magonzal          #+#    #+#             */
-/*   Updated: 2023/06/01 16:24:16 by magonzal         ###   ########.fr       */
+/*   Created: 2023/06/01 15:53:54 by magonzal          #+#    #+#             */
+/*   Updated: 2023/06/01 15:55:46 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cub3d.h>
+#include "cub3d.h"
 
-int	main(int argc, char **argv)
+void	ft_error(char *str)
 {
-	t_all	*all;
+	printf("%s\n", str);
+	exit(0);
+}
 
-	if (argc != 2)
-		ft_error("bad num of arguments");
-	all = ft_parse_map(argv);
-	ft_cube(all);
-	ft_free_struct(all);
+void	ft_free_struct(t_all *all)
+{
+	free(all->mapest->no_tex_path);
+	free(all->mapest->so_tex_path);
+	free(all->mapest->we_tex_path);
+	free(all->mapest->ea_tex_path);
+	free(all->mapest->f_color);
+	free(all->mapest->c_color);
+	free(all);
 }

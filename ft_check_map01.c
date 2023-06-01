@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:46:23 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/30 19:39:48 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/06/01 14:33:52 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ int	*ft_get_color(char **map, char *str)
 	while (map[++i])
 	{
 		j = 0;
-		while (map[i][j] && map[i][j] == ' ')
-			i++;
-		if (ft_strncmp(map[i], str, ft_strlen(str)) == 0)
+		while (map[i] && map[i][j] && map[i][j] == ' ')
+			j++;
+		if (ft_strncmp(&map[i][j], str, ft_strlen(str)) == 0)
 		{
 			ret = ft_check_good(map[i]);
 			return (ft_transform_rgb(ret));
@@ -85,7 +85,7 @@ char	*ft_check_tex(char **map, char *str)
 
 	i = -1;
 	if (!map)
-		return NULL;
+		return (NULL);
 	while (map[++i])
 	{
 		j = 0;
@@ -114,11 +114,11 @@ t_all	*ft_check_map01(char **read)
 	all->mapest->c_color = ft_get_color(read, "C");
 	if (all->mapest->f_color == NULL || !(all->mapest->f_color)
 		|| all->mapest->c_color == NULL || !(all->mapest->c_color))
-		ft_error("Error: Bad colors");
+		ft_error("Bad colors");
 	if (all->mapest->no_tex_path == NULL || !(*all->mapest->no_tex_path)
 		|| all->mapest->so_tex_path == NULL || !(*all->mapest->so_tex_path)
 		|| all->mapest->we_tex_path == NULL || !(*all->mapest->we_tex_path)
 		|| all->mapest->ea_tex_path == NULL || !(*all->mapest->ea_tex_path))
-		ft_error("Error: Bad texture");
+		ft_error("Bad texture");
 	return (all);
 }

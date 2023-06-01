@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:03:23 by magonzal          #+#    #+#             */
-/*   Updated: 2023/05/30 20:12:23 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/06/01 14:55:01 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # define KEYDOWN 1
 # define KEYRIGHT 2
 # define KEYLEFT 0
+# define ISSPACE " \t\f\r\n\v"
 
 typedef struct s_map {
 	char	*no_tex_path;
@@ -139,7 +140,7 @@ void	ft_error(char *str);
 t_all	*ft_check_map01(char **read);
 char	*ft_check_good(char *str);
 int		ft_check_end_color(char **map, char *str);
-char	**ft_clean_map(char **read);
+char	**ft_clean_map(char **read, int inic);
 void	ft_free_struct(t_all *all);
 void	ft_cube(t_all *all);
 t_ray	*ft_load_tex(t_ray *ray);
@@ -162,6 +163,9 @@ t_ray	cube2aux(t_ray ray, t_wall	*wall, int x);
 int		startplayeraux(t_ray *ray, int i, int j);
 void	rayaux(t_ray *ray);
 void	print_matrix_p(char **mat);
-int	ft_print_matrix(char **matrix);
-int	mapname2(char *m);
+int		ft_print_matrix(char **matrix);
+int		mapname2(char *m);
+int		ft_check_map_init(char **read);
+char	*ft_check_good(char *str);
+void	auxcub(t_ray *ray);
 #endif

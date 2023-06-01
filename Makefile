@@ -12,7 +12,7 @@ SRCS	=	main.c \
 			ft_cube.c \
 			ft_load_tex.c \
 			ft_key.c\
-			debug.c \
+			ft_check_map_init.c\
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -30,7 +30,7 @@ CC	= gcc
 
 RM	= rm -f
 
-CFLAGS	= -I. -Wall -Wextra -Werror -Imlx #-g3 -fsanitize=address # con el sanitize puesto va todo mas lento
+CFLAGS	= -I. -Wall -Wextra -Werror -Imlx #-fsanitize=address
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
