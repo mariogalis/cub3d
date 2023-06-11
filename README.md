@@ -96,15 +96,15 @@ C 0,0,0
 The maps folder contains examples of map files to help you understand the format and get started with your own designs. Experiment with different layouts, textures, and objects to craft unique gaming experiences.
 
 ## Contributing
-We welcome contributions to Cub3D! If you find any bugs, have ideas for improvements, or would like to add new features, please submit an issue or a pull request to the GitHub repository. We appreciate your help in making Cub3D even better.
+We welcome contributions to Cub3D! If you find any bugs, have ideas for improvements, or would like to add new features, please submit an issue or a pull request to the [GitHub repository](https://github.com/mariogalis/cub3d). We appreciate your help in making Cub3D even better.
 
 ## License
-Cub3D is open-source software released under the MIT License. Feel free to modify, distribute, and use the code as per the terms of the license.
+Cub3D is a game develped by me and [Albertoja](https://github.com/Albertoja?tab=repositories) fell free to use it as a guide to your own proyect!
 
 ## Acknowledgements
 We would like to acknowledge the following resources that helped inspire and guide the development of Cub3D:
 
-Doom and Wolfenstein 3D
-The MiniLibX graphical library
-42 Docs
+- [Doom and Wolfenstein 3D](https://es.wikipedia.org/wiki/Ray_casting)
+- [The MiniLibX graphical library](https://harm-smits.github.io/42docs/libs/minilibx)
+- [42 Docs](https://harm-smits.github.io/42docs/projects/cub3d)
 Thank you for choosing Cub3D! Enjoy the retro gaming experience and have fun exploring the virtual world. If you have any questions, refer to the documentation or reach out to the project maintainers. Happy gaming!
