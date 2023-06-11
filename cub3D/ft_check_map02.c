@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map02.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:50:02 by magonzal          #+#    #+#             */
-/*   Updated: 2023/06/01 21:09:52 by magonzal         ###   ########.fr       */
+/*   Updated: 2023/06/05 19:54:38 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	aux(char	**matrix, int i, int j)
 
 void	ft_check_map_floor(t_all all, int i, int j, int max)
 {
-	if ((i - 1) == 0 || (i + 1) == max)
+	if ((i + 1) == max || i - 1 < 0 || j - 1 < 0)
 		ft_error("map open");
 	if (!all.mapest->map[i + 1][j] || !all.mapest->map[i - 1][j] ||
 		!all.mapest->map[i][j + 1] || !all.mapest->map[i][j - 1])
